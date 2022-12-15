@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:48:00 by matde-je          #+#    #+#             */
-/*   Updated: 2022/12/15 22:44:58 by matde-je         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:20:37 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *linha, char *buffer)
 {
 	char	*final;
 	size_t	j;
@@ -34,22 +34,22 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	j = 0;
 	i = 0;
-	final = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	final = malloc(ft_strlen(linha) + ft_strlen(buffer) + 1);
 	if (!final)
 		return (0);
-	while (s1 != NULL && s1[i] != '\0')
+	while (linha != NULL && linha[i] != '\0')
 	{
-		final[i] = s1[i];
+		final[i] = linha[i];
 		i++;
 	}
-	while (s2 != NULL && s2[j] != '\0')
+	while (buffer != NULL && buffer[j] != '\0')
 	{
-		final[i++] = s2[j];
-		if (s2[j] == '\n')
+		final[i++] = buffer[j];
+		if (buffer[j] == '\n')
 			break ;
 		j++;
 	}
 	final[i] = '\0';
-	free(s1);
+	free(linha);
 	return (final);
 }

@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:46:22 by matde-je          #+#    #+#             */
-/*   Updated: 2022/12/15 23:15:46 by matde-je         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:17:46 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(char *line, char *buf);
 #endif
