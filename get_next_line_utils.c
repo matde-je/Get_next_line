@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:48:00 by matde-je          #+#    #+#             */
-/*   Updated: 2022/12/14 18:15:34 by matde-je         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:44:58 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,22 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	j;
 	size_t	i;
 
-	j = -1;
+	j = 0;
 	i = 0;
 	final = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!final)
 		return (0);
-	while (i < ft_strlen(s1))
+	while (s1 != NULL && s1[i] != '\0')
 	{
 		final[i] = s1[i];
 		i++;
 	}
-	while (++j < ft_strlen(s2))
+	while (s2 != NULL && s2[j] != '\0')
 	{
 		final[i++] = s2[j];
 		if (s2[j] == '\n')
 			break ;
+		j++;
 	}
 	final[i] = '\0';
 	free(s1);

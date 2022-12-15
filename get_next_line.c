@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:46:01 by matde-je          #+#    #+#             */
-/*   Updated: 2022/12/15 00:54:27 by matde-je         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:09:25 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*get_next_line(int fd)
 	int			trig;
 	int			j;
 
-	if (BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (BUFFER_SIZE <= 0 || read(fd, 0, 0) == -1)
 		return (NULL);
 	line = NULL;
 	trig = 0;
-	while (trig == 0 && (buf[0] != '\0' || read(fd, buf, BUFFER_SIZE) > 0))
+	while (trig == 0 && (buf[0] != 0 || read(fd, buf, BUFFER_SIZE) != 0))
 	{
 		line = ft_strjoin(line, buf);
 		i = 0;
@@ -41,7 +41,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int	main()
+/*int	main()
 {
 	int		fd;
 	char	*line;
@@ -51,4 +51,4 @@ int	main()
 	printf("%s", line);
 	line = get_next_line(fd);
 	printf("%s", line);
-}
+}*/
