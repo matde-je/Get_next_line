@@ -12,6 +12,9 @@
 
 #include "get_next_line.h"
 
+/*if read returns 0 means end of file and while loop terminates there
+buffer is static so needs to be 0 if an error occured (read returns -1)*/
+
 int	buffer(char *buf)
 {
 	int			i;
