@@ -21,10 +21,13 @@ int	buffer(char *buf)
 	trig = 0;
 	i = 0;
 	j = 0;
-	while (buf[i])
+	while (buf[i] != '\0')
 	{
 		if (trig == 1)
-			buf[j++] = buf[i];
+		{
+			buf[j] = buf[i];
+			j++;
+		}
 		if (buf[i] == '\n')
 			trig = 1;
 		buf[i] = 0;
